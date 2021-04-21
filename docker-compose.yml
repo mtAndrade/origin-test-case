@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        volumes:
+            - .:/srv/app
+        networks: 
+            - risk_profiler
+        command: sh -c "make start"
+
+networks:
+    risk_profiler:
